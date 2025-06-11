@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ML‑RAY&nbsp;| Automated Vulnerability Assessment of Public ML Models</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/a2d9a38e1e.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --clr-bg: #0e0f14;
+      --clr-card: #16171d;
+      --clr-accent: #6c5ffc;
+      --clr-text: #e4e6eb;
+      --clr-muted: #a0a3ad;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--clr-bg);
+      color: var(--clr-text);
+      line-height: 1.6;
+    }
+    a {
+      color: var(--clr-accent);
+      text-decoration: none;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    header {
+      padding: 6rem 0 4rem 0;
+      text-align: center;
+      background: linear-gradient(135deg, #5338ba 0%, #6c5ffc 50%, #8f78ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 15s ease infinite;
+    }
+    @keyframes gradientShift {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    header h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+    header p {
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--clr-muted);
+    }
+    /* Abstract accordion */
+    details {
+      background: var(--clr-card);
+      border-radius: 0.75rem;
+      margin: 2rem 0;
+      padding: 1.25rem 1.5rem;
+      position: relative;
+    }
+    summary {
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display:none; }
+    details[open] summary::after {
+      transform: rotate(90deg);
+    }
+    summary::after {
+      content: '\f054';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      right: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin: 3rem 0 4rem;
+    }
+    .stat-card {
+      background: var(--clr-card);
+      border-radius: 1rem;
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    }
+    .stat-card h3 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+      color: var(--clr-accent);
+    }
+    .stat-card p {
+      font-size: 0.95rem;
+      color: var(--clr-muted);
+      letter-spacing: 0.5px;
+    }
+    section {
+      margin-bottom: 4.5rem;
+    }
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: var(--clr-accent);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.5rem;
+      background: var(--clr-accent);
+      color: #fff;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+    .btn:hover { background: #5446e9; }
+    .btn i { font-size: 1.1rem; }
+    footer {
+      padding: 2rem 0 3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--clr-muted);
+      border-top: 1px solid #1d1e25;
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <h1>ML‑RAY</h1>
+    <p>Automated Vulnerability Assessment of Public Machine Learning Models</p>
+  </header>
+
+  <main class="container">
+    <!-- Abstract -->
+    <details open>
+      <summary>Abstract</summary>
+      <p style="margin-top:1rem;">
+        Machine learning models have grown exponentially in recent years, supporting various real‑world applications. Popular ML platforms such as <em>Hugging Face</em> host thousands of publicly shared models, but with convenience comes risk: the prevalence of hidden vulnerabilities. In this paper, we introduce <strong>ML‑RAY</strong>, the first automated framework for security testing of public ML models at scale. Evaluating <strong>1,381</strong> popular models — serving <strong>19&nbsp;million+</strong> users — under eight representative adversarial attacks, we reveal that <strong>70%</strong> of models are vulnerable, losing <strong>50%+</strong> accuracy under black‑box attacks. Lightweight edge‑deployed models fare worst: <strong>90%</strong> attack success. Our findings urge platform‑integrated, automated vulnerability assessment.
+      </p>
+    </details>
+
+    <!-- Key Findings -->
+    <section>
+      <h2 class="section-title">Key Findings</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>70%</h3>
+          <p>Models compromised<br>by black‑box attacks</p>
+        </div>
+        <div class="stat-card">
+          <h3>98%</h3>
+          <p>Accuracy drop (LBFGS)<br>for top‑10 models</p>
+        </div>
+        <div class="stat-card">
+          <h3>90%</h3>
+          <p>Attack success<br>on lightweight models</p>
+        </div>
+        <div class="stat-card">
+          <h3>19&nbsp;M+</h3>
+          <p>Affected end‑users across<br>vulnerable models</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section>
+      <h2 class="section-title">Framework Architecture</h2>
+      <p>ML‑RAY follows a modular, multi‑layered design supporting white‑box, black‑box, and transfer attack pipelines. Replace the placeholder below with your system diagram or animated GIF to illustrate the workflow.</p>
+      <img src="assets/ml-ray-architecture-placeholder.svg" alt="ML‑RAY Architecture Diagram" style="width:100%;max-width:860px;margin:2rem auto;display:block;border-radius:1rem;box-shadow:0 6px 14px rgba(0,0,0,0.4);">
+    </section>
+
+    <!-- Paper & Code -->
+    <section>
+      <h2 class="section-title">Paper & Resources</h2>
+      <p>You can explore the full details, datasets, and reproduction scripts via the links below.</p>
+      <p style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
+        <a class="btn" href="https://example.com/ML-RAY.pdf" target="_blank" rel="noopener">
+          <i class="fa-solid fa-file-pdf"></i> Download PDF
+        </a>
+        <a class="btn" href="https://github.com/yourusername/ml-ray" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github"></i> Source Code
+        </a>
+        <a class="btn" href="#citation">
+          <i class="fa-solid fa-quote-left"></i> Citation
+        </a>
+      </p>
+    </section>
+
+    <!-- Citation -->
+    <section id="citation">
+      <h2 class="section-title">Citation</h2>
+      <pre style="background:var(--clr-card);padding:1.5rem;border-radius:0.75rem;overflow:auto;">
+@inproceedings{mlray2025,
+  title={{ML-RAY}: Automated Vulnerability Assessment of Public Machine Learning Models},
+  author={LastName, FirstName and LastName, FirstName and LastName, FirstName},
+  booktitle={Proceedings of the XYZ Security Symposium},
+  year={2025}
+}
+      </pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 ML‑RAY Project · Made with ♥ for open science</p>
+  </footer>
+
+</body>
+</html>
