@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ML‑RAY | Test Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --clr-bg: #0e0f14;
+        --clr-card: #16171d;
+        --clr-accent: #6c5ffc;
+        --clr-text: #e4e6eb;
+        --clr-muted: #a0a3ad;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--clr-bg);
+        color: var(--clr-text);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 1.25rem;
+      }
+      h1 {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        font-weight: 800;
+        color: var(--clr-accent);
+      }
+      p {
+        color: var(--clr-muted);
+        font-size: 1rem;
+      }
+      a {
+        color: var(--clr-accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .btn {
+        margin-top: 1rem;
+        display: inline-block;
+        padding: 0.65rem 1.25rem;
+        border-radius: 0.5rem;
+        background: var(--clr-accent);
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Test Page</h1>
+      <p>If you can read this, the multi‑file deploy pipeline is working!</p>
+      <a class="btn" href="index.html">← Back to ML‑RAY Home</a>
+    </main>
+  </body>
+</html>
