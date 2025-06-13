@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ML‑RAY | Public ML Model Vulnerability Observatory</title>
+
+    <!-- Fonts & TailwindCSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      :root {
+        --ray-indigo: #6c5ffc;
+        --ray-bg: #0e0f14;
+        --ray-surface: #16171d;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background: var(--ray-bg);
+        color: #f1f5f9;
+      }
+      a {
+        color: var(--ray-indigo);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <!-- ────────────────  HEADER  ──────────────── -->
+    <header class="bg-gradient-to-r from-indigo-500/30 to-indigo-700/20">
+      <div class="container mx-auto px-6 py-12 text-center">
+        <h1 class="text-4xl lg:text-6xl font-extrabold bg-gradient-to-r from-indigo-300 to-indigo-500 bg-clip-text text-transparent animate-pulse">
+          ML‑RAY Observatory
+        </h1>
+        <p class="mt-4 max-w-2xl mx-auto text-slate-300 text-lg">
+          Open, read‑only catalogue of security findings across <span class="font-semibold">public machine‑learning models</span>.
+        </p>
+        <!-- Search (read‑only) -->
+        <div class="mt-8 flex justify-center">
+          <input
+            type="search"
+            placeholder="Search by model name, hash, or dataset…"
+            class="w-full max-w-xl rounded-lg border border-slate-700 bg-slate-800/60 py-3 px-5 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/70"
+            disabled
+          />
+        </div>
+        <p class="mt-2 text-xs text-slate-500">(search coming soon – data currently static)</p>
+      </div>
+    </header>
+
+    <!-- ────────────────  STATS  ──────────────── -->
+    <section class="container mx-auto px-6 pt-8 pb-16 flex-1">
+      <h2 class="text-indigo-400 font-semibold text-xl mb-6">Key Metrics</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-xl bg-slate-800/60 p-6 shadow-lg text-center">
+          <span class="block text-3xl font-black text-indigo-400">1,381</span>
+          <span class="mt-1 block text-slate-400 text-sm">Models scanned</span>
+        </div>
+        <div class="rounded-xl bg-slate-800/60 p-6 shadow-lg text-center">
+          <span class="block text-3xl font-black text-indigo-400">70%</span>
+          <span class="mt-1 block text-slate-400 text-sm">Vulnerability rate</span>
+        </div>
+        <div class="rounded-xl bg-slate-800/60 p-6 shadow-lg text-center">
+          <span class="block text-3xl font-black text-indigo-400">8</span>
+          <span class="mt-1 block text-slate-400 text-sm">Attack vectors tested</span>
+        </div>
+        <div class="rounded-xl bg-slate-800/60 p-6 shadow-lg text-center">
+          <span class="block text-3xl font-black text-indigo-400">19&nbsp;M+</span>
+          <span class="mt-1 block text-slate-400 text-sm">End‑users affected</span>
+        </div>
+      </div>
+
+      <!-- abstract accordian-->
+      <details open class="mt-12 rounded-lg bg-slate-800/60 p-6 shadow">
+        <summary class="cursor-pointer font-semibold text-lg text-indigo-300 select-none">Abstract</summary>
+        <p class="mt-4 text-slate-300 leading-relaxed">
+          <strong>ML‑RAY</strong> is the first automated framework for large‑scale security testing of public machine‑learning models. This observatory hosts a read‑only subset of its&nbsp;results – no sign‑ups, no submissions, just data. For methodological details see the accompanying paper.
+        </p>
+      </details>
+
+      <!-- architecture image placeholder-->
+      <h2 class="text-indigo-400 font-semibold text-xl mt-16 mb-4">Framework Architecture</h2>
+      <img src="assets/ml-ray-architecture-placeholder.svg" alt="ML‑RAY Architecture" class="w-full max-w-3xl mx-auto rounded-lg shadow-lg" />
+
+      <!-- resources -->
+      <h2 class="text-indigo-400 font-semibold text-xl mt-16 mb-4">Resources</h2>
+      <div class="flex flex-wrap gap-4">
+        <a href="https://example.com/ML-RAY.pdf" class="inline-block rounded-md bg-indigo-500 hover:bg-indigo-600 px-5 py-3 font-semibold text-white transition">Download&nbsp;Paper&nbsp;(PDF)</a>
+        <a href="https://github.com/yourusername/ml-ray" class="inline-block rounded-md border border-indigo-400 px-5 py-3 font-semibold text-indigo-300 hover:bg-indigo-500/10 transition">Source&nbsp;Code</a>
+      </div>
+
+      <!-- citation -->
+      <h2 id="citation" class="text-indigo-400 font-semibold text-xl mt-16 mb-4">Citation</h2>
+      <pre class="bg-slate-900/70 rounded-lg p-4 overflow-x-auto text-slate-300 text-sm">
+@inproceedings{mlray2025,
+  title={{ML-RAY}: Automated Vulnerability Assessment of Public Machine Learning Models},
+  author={LastName, FirstName and LastName, FirstName and LastName, FirstName},
+  booktitle={Proceedings of the XYZ Security Symposium},
+  year={2025}
+}
+      </pre>
+    </section>
+
+    <!-- ────────────────  FOOTER  ──────────────── -->
+    <footer class="bg-slate-900/80 py-6 text-center text-sm text-slate-500">
+      © 2025&nbsp;ML‑RAY&nbsp;Observatory · Read‑only demo – no accounts, no submissions
+    </footer>
+  </body>
+</html>
